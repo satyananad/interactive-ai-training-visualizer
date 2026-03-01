@@ -197,6 +197,6 @@ npm test
 
 Fill these before submitting:
 
-1. GitHub repository link: `ADD_LINK_HERE`
-2. Deployed app link (Vercel preferred): `ADD_LINK_HERE`
-3. Loom walkthrough (3-5 min): `ADD_LINK_HERE`
+1. GitHub repository link: (https://github.com/satyananad/interactive-ai-training-visualizer)
+2. Deployed app link (Vercel preferred): (https://interactive-ai-training-visualizer.vercel.app/)
+3. Loom walkthrough (3-5 min): (https://www.loom.com/share/b275a786a30a4ee7a634779d318d3b7b)
