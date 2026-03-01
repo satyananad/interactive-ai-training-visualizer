@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-slate-100 antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Shared glassmorphism + neon edge used on all panels */
+.glass-panel {
+  @apply bg-panel backdrop-blur-xl border border-white/10 rounded-2xl shadow-neon;
+}
+
+.neon-border {
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4),
+    0 0 20px rgba(6, 182, 212, 0.35),
+    0 0 40px rgba(168, 85, 247, 0.35);
+}
+
+/* Subtle animated particle glow in the background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.2), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(52, 211, 153, 0.16), transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.75;
+  animation: particleDrift 26s linear infinite alternate;
+  z-index: -1;
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, -2%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(4%, 4%, 0) scale(1.08);
+  }
+}
+
+/* Light theme */
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  @apply bg-slate-100 text-slate-800;
+}
+
+[data-theme="light"] .glass-panel {
+  @apply bg-white/80 border-slate-200;
+}
+
+[data-theme="light"] .neon-border {
+  box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.5),
+    0 0 20px rgba(6, 182, 212, 0.2),
+    0 0 40px rgba(168, 85, 247, 0.15);
+}
+
+[data-theme="light"] body::before {
+  opacity: 0.4;
+}
+
+
