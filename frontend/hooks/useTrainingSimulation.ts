@@ -13,7 +13,7 @@ interface UseTrainingSimulationOptions {
 }
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:4000";
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://interactive-ai-training-visualizer-1.onrender.com/;
 
 export function useTrainingSimulation({
   epochs,
