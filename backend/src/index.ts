@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: "*",
     methods: ["GET"],
     credentials: false
   })
@@ -22,6 +22,6 @@ app.get("/health", (_req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Training API server running on http://localhost:${PORT}`);
+  console.log(`Training API server running on :${PORT}`);
 });
 
